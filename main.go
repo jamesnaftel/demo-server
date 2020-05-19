@@ -28,6 +28,7 @@ func main() {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
+
 	fmt.Fprintln(w, "Hello from demo-server!!!!!!!!!!!!")
 }
 
