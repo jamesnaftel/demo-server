@@ -11,33 +11,6 @@ build_targets:
       - go get
       - go build
       - go test ./...
-      - echo "begin test"
-      - echo hi
-      - bash -c "echo hello"
-      - echo end_test
-
-
-  - name: sleep
-    environment:
-      - SKIPPER_IGNORE=ls
-    commands:
-      - ls
-      - ls -alt
-      - echo 'about to sleep'
-      - sleep 150
-      - echo 'sleep over'
-      - go get
-      - go build
-      - go test ./...
-
-  - name: mac
-    environment:
-      - SKIPPER_IGNORE=ls
-    commands:
-      - ls
-      - go get
-      - go build
-      - go test ./...
 
   - name: deploy
     tags:
@@ -51,4 +24,3 @@ ci:
   builds:
     - name: default
       build_target: default
-      when: branch is 'main' OR action is 'pull_request'
